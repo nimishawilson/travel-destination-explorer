@@ -1,0 +1,9 @@
+.destinations h1 {
+  margin: 0 0 var(--space-4);
+}
+
+.destinations__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}

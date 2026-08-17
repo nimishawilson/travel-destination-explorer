@@ -1,0 +1,19 @@
+<article class="card">
+  <img
+    class="card__image"
+    [src]="destination().imageUrl"
+    [alt]="destination().name + ', ' + destination().country"
+  />
+  <div class="card__body">
+    <h3 class="card__name">{{ destination().name }}</h3>
+    <p class="card__country">{{ destination().country }}</p>
+    <p class="card__description">{{ destination().description }}</p>
+    <a
+      class="card__link"
+      [routerLink]="['/destinations', destination().slug]"
+      [attr.aria-label]="'View details for ' + destination().name"
+    >
+      View Details
+    </a>
+  </div>
+</article>

@@ -1,0 +1,50 @@
+@if (destination(); as destination) {
+  <article class="detail">
+    <section class="detail__hero">
+      <img
+        class="detail__image"
+        [src]="destination.imageUrl"
+        [alt]="destination.name + ', ' + destination.country"
+      />
+      <div class="detail__hero-text">
+        <h1>{{ destination.name }}</h1>
+        <p class="detail__country">{{ destination.country }}</p>
+        <p>{{ destination.description }}</p>
+      </div>
+    </section>
+
+    <section class="detail__section">
+      <h2>Travel Information</h2>
+      <dl class="detail__info">
+        <dt>Best time to visit</dt>
+        <dd>{{ destination.bestTimeToVisit }}</dd>
+        <dt>Estimated daily budget</dt>
+        <dd>{{ destination.estimatedDailyBudget }}</dd>
+      </dl>
+    </section>
+
+    <section class="detail__section">
+      <h2>Popular Attractions</h2>
+      <ul>
+        @for (attraction of destination.popularAttractions; track attraction) {
+          <li>{{ attraction }}</li>
+        }
+      </ul>
+    </section>
+
+    <section class="detail__section">
+      <h2>Things To Do</h2>
+      <ul>
+        @for (activity of destination.thingsToDo; track activity) {
+          <li>{{ activity }}</li>
+        }
+      </ul>
+    </section>
+  </article>
+} @else {
+  <section class="detail__not-found">
+    <h1>Destination not found</h1>
+    <p>We couldn't find the destination you were looking for.</p>
+    <a routerLink="/destinations">Back to Destinations</a>
+  </section>
+}

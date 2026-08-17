@@ -1,0 +1,14 @@
+<section class="hero">
+  <h1>Explore Amazing Destinations</h1>
+  <p>Discover beautiful places around the world and find inspiration for your next trip.</p>
+  <a class="hero__cta" routerLink="/destinations">Explore Destinations</a>
+</section>
+
+<section class="featured">
+  <h2>Featured Destinations</h2>
+  <div class="featured__grid">
+    @for (destination of featuredDestinations; track destination.slug) {
+      <app-destination-card [destination]="destination" />
+    }
+  </div>
+</section>

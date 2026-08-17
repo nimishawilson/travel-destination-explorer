@@ -1,0 +1,8 @@
+<section class="destinations">
+  <h1>Explore Destinations</h1>
+  <div class="destinations__grid">
+    @for (destination of destinations; track destination.slug) {
+      <app-destination-card [destination]="destination" />
+    }
+  </div>
+</section>
