@@ -34,6 +34,21 @@ export class DestinationDetail implements OnInit {
       content: `Discover ${this.destination()?.name}, ${this.destination()?.country}. ${this.destination()?.description}`
     });
 
+    this.meta.updateTag({
+      property: 'og:title',
+      content: `${this.destination()?.name} Travel Guide | Travel Explorer`
+    });
+
+    this.meta.updateTag({
+      property: 'og:description',
+      content: this.destination()?.description ?? ''
+    });
+
+    this.meta.updateTag({
+      property: 'og:image',
+      content: this.destination()?.imageUrl ?? ''
+    });
+
   }
 
 }
